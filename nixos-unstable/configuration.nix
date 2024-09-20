@@ -289,6 +289,12 @@
   # Virt-manager
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
+  
+  # Distrobox.
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
 
 ####################################################################################################
 
@@ -326,12 +332,6 @@
   # Mullvad VPN
   services.mullvad-vpn.enable = true;
   services.mullvad-vpn.package = pkgs.mullvad-vpn;
-  
-  # Distrobox.
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-  };
 
 ####################################################################################################
 
