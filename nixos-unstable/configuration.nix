@@ -95,6 +95,9 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  
+  # Wake-on-lan. (not working at all?)
+  # networking.interfaces.enp6s0.wakeOnLan.enable = true;
 
 ####################################################################################################
 
@@ -180,6 +183,8 @@
   gparted
   bottles
   distrobox
+  ethtool
+  btop
 
   # Security.
   yubioath-flutter
@@ -332,6 +337,11 @@
   # Mullvad VPN
   services.mullvad-vpn.enable = true;
   services.mullvad-vpn.package = pkgs.mullvad-vpn;
+  
+  # Udev rules to get Davinci Resolve Editor Keyboard to work!
+  services.udev.extraRules = ''
+    KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0666"
+  '';
 
 ####################################################################################################
 

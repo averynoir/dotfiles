@@ -37,6 +37,9 @@
     gnomeExtensions.dash-to-dock
     gnomeExtensions.dash-to-panel
     gnomeExtensions.tweaks-in-system-menu
+    gnomeExtensions.ddterm
+    gnomeExtensions.set-monitor-ddc-brightnesscontrast-extra-dimming
+    gnomeExtensions.extension-list
   ];
   
   # Ensure gnome-settings-daemon udev rules are enabled.
