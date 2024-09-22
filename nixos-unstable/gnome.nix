@@ -38,6 +38,7 @@
     gnomeExtensions.dash-to-panel
     gnomeExtensions.tweaks-in-system-menu
     gnomeExtensions.ddterm
+    gnomeExtensions.solaar-extension
   ];
   
   # Ensure gnome-settings-daemon udev rules are enabled.

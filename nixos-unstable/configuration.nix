@@ -175,6 +175,7 @@
   # Unnecessary tools.
   lolcat
   # nitch # Install via nix-env -iA nixos.nitch
+  krabby
   
   # System.
   neovim
@@ -185,6 +186,8 @@
   distrobox
   ethtool
   btop
+  solaar
+  logitech-udev-rules
 
   # Security.
   yubioath-flutter
@@ -235,6 +238,23 @@
   mpv
   yt-dlp
   ffmpeg_7
+  
+# OBS Studio with plugins.
+    (pkgs.wrapOBS {
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs # Obs-studio plugin that allows you to screen capture on wlroots based wayland compositors
+      waveform # Audio spectral analysis plugin for OBS 
+      obs-vkcapture # OBS Linux Vulkan/OpenGL game capture
+      obs-vertical-canvas # Plugin for OBS Studio to add vertical canvas
+      obs-tuna # Song information plugin for obs-studio
+      obs-source-record # OBS Studio plugin to make sources available to record via a filter
+      obs-multi-rtmp # Multi-site simultaneous broadcast plugin for OBS Studio
+      obs-livesplit-one # OBS Studio plugin for adding LiveSplit One as a source
+      obs-composite-blur # Comprehensive blur plugin for OBS that provides several different blur algorithms, and proper compositing
+      obs-3d-effect # Plugin for OBS Studio adding 3D effect filter
+      droidcam-obs # DroidCam OBS
+    ];
+  })
 
   # Gaming.
   prismlauncher
@@ -338,7 +358,7 @@
   services.mullvad-vpn.enable = true;
   services.mullvad-vpn.package = pkgs.mullvad-vpn;
   
-  # Udev rules to get Davinci Resolve Editor Keyboard to work!
+  # Udev rules to get Davinci Resolve Editor Keyboard to work in Davinci Resolve (dah?)!
   services.udev.extraRules = ''
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0666"
   '';
