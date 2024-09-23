@@ -1,5 +1,3 @@
-# configuration.nix
-
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
@@ -284,7 +282,29 @@
   dolphin-emu
   rmg-wayland
 
+  # Office.
+  libreoffice
   ];
+
+####################################################################################################
+
+  # Fonts.
+  fonts.packages = with pkgs; [
+    (nerdfonts.override {
+      fonts = [ "JetBrainsMono" ];
+    })
+    font-awesome
+    google-fonts
+  ];
+  
+   #fonts.fontconfig = {
+    #enable = true;
+    #defaultFonts = {
+      #serif = [ "Liberation Serif" ];
+      #sansSerif = [ "Noto Sans" ];
+      #monospace = [ "Fira Code" ];
+    #};
+  #};
 
 ####################################################################################################
 
