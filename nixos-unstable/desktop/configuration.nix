@@ -184,15 +184,18 @@
   gparted
   bottles
   distrobox
-  ethtool
-  btop
-  solaar
-  logitech-udev-rules
+  ethtool # Utility for controlling network drivers and hardware
+  btop # Monitor of resources
+  solaar # Linux devices manager for the Logitech Unifying Receiver
+  logitech-udev-rules # Linux devices manager for the Logitech Unifying Receiver
+  git
+  flameshot # Powerful yet simple to use screenshot software
+  # pulsar # Community-led Hyper-Hackable Text Editor
 
   # Security.
-  yubioath-flutter
-  keepassxc
-  cryptomator
+  yubioath-flutter # Yubico Authenticator for Desktop
+  keepassxc # Offline password manager with many features
+  cryptomator # Free client-side encryption for your cloud files
 
   # Sync and filesharing.
   megasync
@@ -238,6 +241,9 @@
   mpv
   yt-dlp
   ffmpeg_7
+  tenacity
+  ardour
+  shotwell
   
 # OBS Studio with plugins.
     (pkgs.wrapOBS {
@@ -271,6 +277,9 @@
       ];
     })
   protonup-qt
+  mangohud
+  gamescope
+  goverlay
 
   # Emulation.
   nestopia-ue
@@ -282,8 +291,9 @@
   dolphin-emu
   rmg-wayland
 
-  # Office.
+  # Uncategorized.
   libreoffice
+  leocad
   ];
 
 ####################################################################################################
@@ -384,7 +394,12 @@
   services.udev.extraRules = ''
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0666"
   '';
-
+  
+  # Drawing Tablet.
+  # xserver.wacom.enable = true;
+  # Enable OpenTabletDriver
+  hardware.opentabletdriver.enable = true;
+  
 ####################################################################################################
 
   # This value determines the NixOS release from which the default
